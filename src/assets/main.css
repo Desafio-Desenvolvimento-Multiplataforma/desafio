@@ -1,0 +1,8 @@
+.v-select__content .v-list .v-list-item:hover {
+    background-color: #00796b39;
+}
+
+.v-chip--variant-tonal .v-chip__underlay{
+    background: #00796b!important;
+    opacity: 0.30!important;
+}

@@ -7,17 +7,17 @@ const lat = ref(0);
 const lgn = ref(0);
 const map = ref();
 const mapaContainer = ref();
-const latUnisinos = ref(-29.7944659);
-const lgnUnisinos = ref(-51.155427);
+const latUnisinos = ref(-29.7947464);
+const lgnUnisinos = ref(-51.1548982);
 
 //função pegar localização
 function getLocation() {
+    map.value.setView([latUnisinos.value, lgnUnisinos.value], 16.25)
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
             console.log(position);
             lat.value = position.coords.latitude
             lgn.value = position.coords.longitude
-            map.value.setView([latUnisinos.value, lgnUnisinos.value], 16.5)
 
             var myIcon = L.icon({
                 iconUrl: 'MinhaLocalizacao.svg',
@@ -50,9 +50,25 @@ onMounted(() => {
 .mapa-container {
     display: flex;
     justify-content: center;
-    width: 675px;
-    height: 355px;
-    border: 1px solid #00796B;
+    width: 100%;
+    height: 75%;
+    border: 1.5px solid #00796B;
+    margin: 10px 0px;
+
+}
+
+
+@media screen and (min-width: 768px) {
+    .mapa-container {
+        width: 75%;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .mapa-container {
+        width: 50%;
+    }
 
 }
 </style>

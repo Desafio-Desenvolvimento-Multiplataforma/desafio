@@ -3,9 +3,10 @@
 </script>
 
 <template>
-    <v-select label="Local" :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+    <v-select clearable chips label="Local" hide-details density="comfortable" :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
         variant="outlined"></v-select>
 
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

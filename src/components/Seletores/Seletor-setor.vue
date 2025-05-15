@@ -4,7 +4,7 @@
 
 <template>
 
-    <v-select chips label="Setor" :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+    <v-select clearable chips label="Setor" hide-details density="comfortable" :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
         variant="outlined"></v-select>
 
 </template>

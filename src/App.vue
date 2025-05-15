@@ -25,21 +25,56 @@ import SeletorLocal from './components/Seletores/Seletor-local.vue';
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  background-color: #f5f5f5;
+  height: 100dvh;
+  height: 100dvh;
+  background-color: f5f5f5;
 }
 
 .container-body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
   padding: 20px;
 }
 
 .body-seletores {
   display: flex;
-  width: 50%;
-  gap: 20px;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+
+
+@media screen and (min-width:768px) {
+  .container-body {
+    width: 100%;
+    justify-content: center;
+
+  }
+
+  .body-seletores {
+    flex-direction: row;
+    align-items: center;
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .container-body {
+    width: 100%;
+
+  }
+
+  .body-seletores {
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+  }
 }
 </style>

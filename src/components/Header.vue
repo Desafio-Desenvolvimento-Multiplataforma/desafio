@@ -15,7 +15,9 @@
     background-color: #00796B;
     display: flex;
     align-items: center;
-    padding: 15px;
+    justify-content: center;
+    padding: 10px;
+    gap: 15px;
 }
 
 .header-container img {
@@ -25,10 +27,34 @@
 .header-container h1 {
     color: #f5f5f5;
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-size: 1.5rem !important;
-    width: 100%;
+    font-weight: 600;
+    font-size: 1rem !important;
+    padding-top: 5px;
     text-align: center;
 
+}
+
+@media screen and (min-width: 768px) {
+
+    .header-container img {
+        position: absolute;
+        left: 1rem;
+    }
+
+    .header-container h1 {
+        font-size: 1.25rem !important;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .header-container img {
+        position: absolute;
+        left: 1rem;
+    }
+
+    .header-container h1 {
+        font-size: 1.5rem !important;
+    }
 }
 </style>
