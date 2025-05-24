@@ -1,23 +1,58 @@
 <script setup lang="ts">
-// imports 
+import { ref } from 'vue';
+
 import Header from './components/Header.vue';
 import Mapa from './components/Mapa.vue';
 import Footer from './components/Footer.vue';
 import SeletorSetor from './components/Seletores/Seletor-setor.vue';
 import SeletorLocal from './components/Seletores/Seletor-local.vue';
+import { setoresUnisinos } from './components/Seletores/Setores';
+
+
+//armazenar o setor e o local selecionados
+const setorSelecionado = ref('');
+const localSelecionado = ref('');
+
+//armazenar as coordenadas (latitude e longitude) do local selecionado
+const localCoordenadas = ref<{ latitude: number, longitude: number } | null>(null);
+
+//atualiza coordenadas quando setor e local são definidos
+function atualizarCoordenadas() {
+
+  //encontra o setor selecionado na lista de setores
+  const setor = setoresUnisinos.find(s => s.name === setorSelecionado.value);
+
+  //encontra o local dentro do setor selecionado
+  const local = setor?.local.find(l => l.name === localSelecionado.value);
+
+  //se o local for encontrado, atualiza as coordenadas
+  if (local) {
+    localCoordenadas.value = {
+      latitude: local.latitude,
+      longitude: local.longitude
+    };
+  } else {
+    //se o local não for encontrado, define as coordenadas como null
+    localCoordenadas.value = null;
+  }
+}
 </script>
 
 <template>
   <div class="container">
-    <Header></Header>
+    <Header />
     <div class="container-body">
       <div class="body-seletores">
-        <seletorSetor></seletorSetor>
-        <seletorLocal></seletorLocal>
+        <SeletorSetor v-model="setorSelecionado" @update:modelValue="atualizarCoordenadas" />
+        <SeletorLocal
+          :setor="setorSelecionado"
+          v-model="localSelecionado"
+          @update:modelValue="atualizarCoordenadas"
+        />
       </div>
-      <Mapa></Mapa>
+      <Mapa :coordenadas="localCoordenadas" />
     </div>
-    <Footer></Footer>
+    <Footer />
   </div>
 </template>
 

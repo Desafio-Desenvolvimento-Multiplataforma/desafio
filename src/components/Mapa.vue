@@ -1,45 +1,65 @@
 <script setup lang="ts">
-
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, watch, defineProps } from 'vue';
 import L from 'leaflet';
 
+//def a propriedade recebida - um objeto de coordenadas (latitude, longitude) ou null
+const props = defineProps<{
+  coordenadas: { latitude: number, longitude: number } | null;
+}>();
+
+//latitude e longitude da localização atual do usuário
 const lat = ref(0);
 const lgn = ref(0);
-const map = ref();
+
+const map = ref<L.Map>();
 const mapaContainer = ref();
-const latUnisinos = ref(-29.7947464);
-const lgnUnisinos = ref(-51.1548982);
 
-//função pegar localização
-function getLocation() {
-    map.value.setView([latUnisinos.value, lgnUnisinos.value], 16.25)
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-            console.log(position);
-            lat.value = position.coords.latitude
-            lgn.value = position.coords.longitude
+//armazenar o marcador (marker) da coordenada passada via props
+let marker: L.Marker | null = null;
 
-            var myIcon = L.icon({
-                iconUrl: 'MinhaLocalizacao.svg',
-                iconSize: [20, 20]
-            });
+onMounted(() => {
+  //inicializa o mapa com a visao da unisinos
+  map.value = L.map(mapaContainer.value!).setView([-29.7947464, -51.1548982], 15.5);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map.value);
 
-            L.marker([lat.value, lgn.value], { icon: myIcon })
-                .addTo(map.value);
-        })
+  // localização do usuário - ícone
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      lat.value = position.coords.latitude;
+      lgn.value = position.coords.longitude;
+
+      //ícone personalizado para representar o usuário
+      const myIcon = L.icon({
+        iconUrl: '/MinhaLocalizacao.svg',
+        iconSize: [20, 20]
+      });
+
+      //marcador da localização do usuário no mapa
+      L.marker([lat.value, lgn.value], { icon: myIcon }).addTo(map.value!);
+    });
+  }
+});
+
+//mudanças na prop coordenadas
+watch(() => props.coordenadas, (novaCoordenada) => {
+  if (novaCoordenada && map.value) {
+    const { latitude, longitude } = novaCoordenada;
+
+    //remove o marcador anterior, se existir
+    if (marker) {
+      map.value.removeLayer(marker);
     }
 
-}
-onMounted(() => {
-    map.value = L.map(mapaContainer.value).setView([lat.value, lgn.value], 13)
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map.value);
-    getLocation();
-})
+    //cria um novo marcador na nova coordenada
+    marker = L.marker([latitude, longitude]).addTo(map.value);
 
-
+    //centraliza o mapa na nova coordenada
+    map.value.setView([latitude, longitude], 17);
+  }
+});
 </script>
 
 <template>
