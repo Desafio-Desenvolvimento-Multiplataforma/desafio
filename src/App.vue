@@ -10,8 +10,8 @@ import { setoresUnisinos } from './components/Seletores/Setores';
 
 
 //armazenar o setor e o local selecionados
-const setorSelecionado = ref('');
-const localSelecionado = ref('');
+const setorSelecionado = ref(null);
+const localSelecionado = ref(null);
 
 //armazenar as coordenadas (latitude e longitude) do local selecionado
 const localCoordenadas = ref<{ latitude: number, longitude: number } | null>(null);
@@ -28,6 +28,7 @@ function atualizarCoordenadas() {
   //se o local for encontrado, atualiza as coordenadas
   if (local) {
     localCoordenadas.value = {
+      nome: local.name,
       latitude: local.latitude,
       longitude: local.longitude
     };
@@ -44,11 +45,7 @@ function atualizarCoordenadas() {
     <div class="container-body">
       <div class="body-seletores">
         <SeletorSetor v-model="setorSelecionado" @update:modelValue="atualizarCoordenadas" />
-        <SeletorLocal
-          :setor="setorSelecionado"
-          v-model="localSelecionado"
-          @update:modelValue="atualizarCoordenadas"
-        />
+        <SeletorLocal :setor="setorSelecionado" v-model="localSelecionado" @update:modelValue="atualizarCoordenadas" />
       </div>
       <Mapa :coordenadas="localCoordenadas" />
     </div>

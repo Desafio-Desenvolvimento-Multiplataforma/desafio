@@ -19,8 +19,8 @@ const locais = ref<string[]>([]);
 watch(() => props.setor, (novoSetor) => {
   const setor = setoresUnisinos.find(s => s.name === novoSetor);
   locais.value = setor ? setor.local.map(l => l.name) : [];
-  localSelecionado.value = '';
-  emit('update:modelValue', '');
+  localSelecionado.value = null;
+  emit('update:modelValue', null);
 }, { immediate: true });
 
 // Emite valor quando localSelecionado mudar
@@ -30,14 +30,6 @@ watch(localSelecionado, (novoValor) => {
 </script>
 
 <template>
-  <v-select
-    v-model="localSelecionado"
-    clearable
-    chips
-    label="Local"
-    :items="locais"
-    hide-details
-    density="comfortable"
-    variant="outlined"
-  />
+  <v-select v-model="localSelecionado" no-data-text="Selecione um setor" clearable chips label="Local" :items="locais"
+    hide-details density="comfortable" variant="outlined" />
 </template>

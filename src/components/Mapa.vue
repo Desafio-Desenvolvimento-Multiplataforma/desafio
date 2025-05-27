@@ -46,15 +46,28 @@ onMounted(() => {
 //mudanças na prop coordenadas
 watch(() => props.coordenadas, (novaCoordenada) => {
   if (novaCoordenada && map.value) {
-    const { latitude, longitude } = novaCoordenada;
+    const { nome, latitude, longitude } = novaCoordenada;
 
     //remove o marcador anterior, se existir
     if (marker) {
       map.value.removeLayer(marker);
     }
-
+    //ícone personalizado para representar o local
+    const localIcon = L.divIcon({
+      html: `
+  <div class = "icon-nome-local">
+  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle opacity="0.5" cx="15" cy="15" r="15" fill="#00796B"/>
+  <circle cx="15" cy="15" r="10" fill="#00796B"/>
+  </svg>
+  <div class = "nome-local">${nome}</div>
+  </div>
+`,
+      iconSize: [150, 30],
+      iconAnchor: [15, 15]
+    });
     //cria um novo marcador na nova coordenada
-    marker = L.marker([latitude, longitude]).addTo(map.value);
+    marker = L.marker([latitude, longitude], { icon: localIcon }).addTo(map.value);
 
     //centraliza o mapa na nova coordenada
     map.value.setView([latitude, longitude], 17);
@@ -63,32 +76,32 @@ watch(() => props.coordenadas, (novaCoordenada) => {
 </script>
 
 <template>
-    <div ref="mapaContainer" class="mapa-container"></div>
+  <div ref="mapaContainer" class="mapa-container"></div>
 </template>
 
 <style scoped>
 .mapa-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 75%;
-    border: 1.5px solid #00796B;
-    margin: 10px 0px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 75%;
+  border: 1.5px solid #00796B;
+  margin: 10px 0px;
 
 }
 
 
 @media screen and (min-width: 768px) {
-    .mapa-container {
-        width: 75%;
-    }
+  .mapa-container {
+    width: 75%;
+  }
 
 }
 
 @media screen and (min-width: 1024px) {
-    .mapa-container {
-        width: 50%;
-    }
+  .mapa-container {
+    width: 50%;
+  }
 
 }
 </style>
