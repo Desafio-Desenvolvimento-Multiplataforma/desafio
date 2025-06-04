@@ -63,7 +63,7 @@ watch(() => props.coordenadas, (novaCoordenada) => {
   <div class = "nome-local">${nome}</div>
   </div>
 `,
-      iconSize: [150, 30],
+      iconSize: [200, 30],
       iconAnchor: [15, 15]
     });
     //cria um novo marcador na nova coordenada

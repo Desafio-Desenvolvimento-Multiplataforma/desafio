@@ -38,87 +38,87 @@ export const setoresUnisinos = [
     name: "Setor B",
     local: [
       {
-        name: "B01",
+        name: "Prédio B01",
         latitude: -29.792531609117027,
         longitude: -51.154927339914195
       },
       {
-        name: "B02",
+        name: "Prédio B02",
         latitude: -29.792491204420447,
         longitude: -51.15403528553096
       },
       {
-        name: "B03",
+        name: "Prédio B03",
         latitude: -29.792806476728035,
         longitude: -51.15471368343212
       },
       {
-        name: "B04",
+        name: "Prédio B04",
         latitude: -29.79286467223331,
         longitude: -51.1538768329297
       },
       {
-        name: "B05",
+        name: "Prédio B05",
         latitude: -29.793213728620866,
         longitude: -51.1547835163081
       },
       {
-        name: "B06",
+        name: "Prédio B06",
         latitude: -29.79322209297262,
         longitude: -51.15384282771633
       },
       {
-        name: "B07",
+        name: "Prédio B07",
         latitude: -29.79355438317733,
         longitude: -51.154122482844464
       },
       {
-        name: "B08 Auditório Central",
+        name: "Prédio B08 Auditório Central",
         latitude: -29.793433345499288,
         longitude: -51.15363163884169
       },
       {
-        name: "B09",
+        name: "Prédio B09",
         latitude: -29.79301114961461,
         longitude: -51.155519233961755
       },
       {
-        name: "B10",
+        name: "Prédio B10",
         latitude: -29.793896761036752,
         longitude: -51.15353026290199
       },
       {
-        name: "B11",
+        name: "Prédio B11",
         latitude: -29.79418304037594,
         longitude: -51.15338965489627
       },
       {
-        name: "B12",
+        name: "Prédio B12",
         latitude: -29.794459933342655,
         longitude: -51.15323282215113
       },
       {
-        name: "B13",
+        name: "Prédio B13",
         latitude: -29.794604507079054,
         longitude: -51.153225503152825
       },
       {
-        name: "B14",
+        name: "Prédio B14",
         latitude: -29.794874722435253,
         longitude: -51.15311560534193
       },
       {
-        name: "B15",
+        name: "Prédio B15",
         latitude: -29.795144936214744,
         longitude: -51.15306065845029
       },
       {
-        name: "B16",
+        name: "Prédio B16",
         latitude: -29.79480886494038,
         longitude: -51.153696028941674
       },
       {
-        name: "B17",
+        name: "Prédio B17",
         latitude: -29.794296938334266,
         longitude: -51.154165562610174
       }
@@ -268,12 +268,12 @@ export const setoresUnisinos = [
         longitude: -51.15220219021463
       },
       {
-        name: "H02",
+        name: "Prédio H02",
         latitude: -29.797742751344938,
         longitude: -51.15215598731072
       },
       {
-        name: "H03",
+        name: "Prédio H03",
         latitude: -29.797540042466746,
         longitude: -51.15312560055706
       }
