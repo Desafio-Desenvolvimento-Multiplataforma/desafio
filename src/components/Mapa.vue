@@ -25,11 +25,15 @@ onMounted(() => {
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map.value);
 
-  // localização do usuário - ícone
+  // Pegando a localização do usuário através do navigator.geolocation (API nativa do navegador)
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
-      lat.value = position.coords.latitude;
-      lgn.value = position.coords.longitude;
+      // lat.value = position.coords.latitude;
+      // lgn.value = position.coords.longitude;
+
+      //Simulando localização dentro da Unisinos
+      lat.value = -29.794782;
+      lgn.value = -51.151863;
 
       //ícone personalizado para representar o usuário
       const myIcon = L.icon({
@@ -39,6 +43,8 @@ onMounted(() => {
 
       //marcador da localização do usuário no mapa
       L.marker([lat.value, lgn.value], { icon: myIcon }).addTo(map.value!);
+
+
     });
   }
 });
@@ -48,7 +54,6 @@ watch(() => props.coordenadas, (novaCoordenada) => {
   if (novaCoordenada && map.value) {
     const { nome, latitude, longitude } = novaCoordenada;
 
-    //remove o marcador anterior, se existir
     //ícone personalizado para representar o local
     const localIcon = L.divIcon({
       html: `
@@ -71,8 +76,9 @@ watch(() => props.coordenadas, (novaCoordenada) => {
       marker?.setLatLng([latitude, longitude]);
       marker.setIcon(localIcon);
     }
+    const positionBounds = L.latLngBounds(L.latLng(lat.value, lgn.value), L.latLng(latitude, longitude))
     //centraliza o mapa na nova coordenada
-    map.value.setView([latitude, longitude], 17);
+    map.value.flyToBounds(positionBounds);
   }
 });
 </script>
