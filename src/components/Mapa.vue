@@ -49,9 +49,6 @@ watch(() => props.coordenadas, (novaCoordenada) => {
     const { nome, latitude, longitude } = novaCoordenada;
 
     //remove o marcador anterior, se existir
-    if (marker) {
-      map.value.removeLayer(marker);
-    }
     //ícone personalizado para representar o local
     const localIcon = L.divIcon({
       html: `
@@ -62,13 +59,18 @@ watch(() => props.coordenadas, (novaCoordenada) => {
   </svg>
   <div class = "nome-local">${nome}</div>
   </div>
-`,
-      iconSize: [200, 30],
+  `,
+      iconSize: [250, 30],
       iconAnchor: [15, 15]
     });
-    //cria um novo marcador na nova coordenada
-    marker = L.marker([latitude, longitude], { icon: localIcon }).addTo(map.value);
-
+    //Verifica se não há um marcador há ser criado
+    if (!marker) {
+      marker = L.marker([latitude, longitude], { icon: localIcon }).addTo(map.value);
+    } else {
+      //Se houver um marcador, é atualizado a posição e o ícone 
+      marker?.setLatLng([latitude, longitude]);
+      marker.setIcon(localIcon);
+    }
     //centraliza o mapa na nova coordenada
     map.value.setView([latitude, longitude], 17);
   }
