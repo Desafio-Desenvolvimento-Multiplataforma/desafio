@@ -240,25 +240,255 @@ export const setoresUnisinos = [
     ]
   },
   {
-    name: "Setor J",
+    name: "Setor E",
     local: [
       {
-        name: "Prédio J01",
-        latitude: -29.797778573001466,
-        longitude: -51.15815947604417
-      }
+        name: "Estacionamento E1",
+        latitude: -29.797940,
+        longitude: -51.155907
+      },
+      {
+        name: "Estacionamento E2",
+        latitude: -29.797688,
+        longitude: -51.156614
+      },
+      {
+        name: "Estacionamento E3",
+        latitude: -29.795862,
+        longitude: -51.155513
+      },      
+      {
+        name: "Anfiteatro Padre Werner",
+        latitude: -29.797129,
+        longitude: -51.156920
+      },
+      {
+        name: "Prédio E01",
+        latitude: -29.797141,
+        longitude: -51.156920
+      },
+      {
+        name: "Prédio E02",
+        latitude: -29.796648,
+        longitude: -51.156395
+      },            
+      {
+        name: "Prédio E03",
+        latitude: -29.796449,
+        longitude: -51.156738
+      },
+      {
+        name: "Prédio E04",
+        latitude: -29.796135,
+        longitude: -51.156693
+      },
+      {
+        name: "Prédio E05",
+        latitude: -29.796507,
+        longitude: -51.156143
+      },
+      {
+        name: "Prédio E06",
+        latitude: -29.796370,
+        longitude: -51.156161
+      },
+      {
+        name: "Prédio E07",
+        latitude: -29.796833,
+        longitude: -51.154939
+      },
+      {
+        name: "Prédio E08",
+        latitude: -29.796638,
+        longitude: -51.154993
+      }, 
+      {
+        name: "Prédio E09",
+        latitude: -29.796377,
+        longitude: -51.155079
+      },     
+      {
+        name: "Prédio E10",
+        latitude: -29.796154,
+        longitude: -51.155498
+      },  
+      {
+        name: "Prédio E11",
+        latitude: -29.796633,
+        longitude: -51.154047
+      },  
+      {
+        name: "Prédio E12",
+        latitude: -29.796524,
+        longitude: -51.154362
+      },  
+      {
+        name: "Prédio E13",
+        latitude: -29.796231,
+        longitude: -51.154278
+      },  
+      {
+        name: "Prédio E14",
+        latitude: -29.795971,
+        longitude: -51.154316
+      },  
+      {
+        name: "Prédio E15",
+        latitude: -29.795698,
+        longitude: -51.154390
+      },  
+      {
+        name: "Prédio E16",
+        latitude: -29.795652,
+        longitude: -51.153747
+      }                                                                              
     ]
   },
   {
-    name: "Setor K",
+    name: "Setor F",
     local: [
       {
-        name: "K01",
-        latitude: -29.797469584303816,
-        longitude: -51.15884868291968
-      }
+        name: "Estacionamento F1",
+        latitude: -29.7930876422441,
+        longitude: -51.14968624118349
+      },
+      {
+        name: "Prédio F01",
+        latitude: -29.792896714792292,
+        longitude: -51.14985314271069
+      },
+      {
+        name: "Prédio F02",
+        latitude: -29.792649825307205,
+        longitude: -51.149917627390344
+      },
+      {
+        name: "Prédio F03",
+        latitude: -29.792205422699123,
+        longitude: -51.14961796329077
+      },
+      {
+        name: "Prédio F04",
+        latitude: -29.79216262826973,
+        longitude: -51.15002004423451
+      },
+      {
+        name: "Prédio F05",
+        latitude: -29.79186050406252,
+        longitude: -51.149990586213605
+      },
+      {
+        name: "Prédio F06",
+        latitude: -29.7916820126459,
+        longitude: -51.14950796001982
+      },
+      {
+        name: "Prédio F07",
+        latitude: -29.791541,
+        longitude: -51.149838
+      },
+      {
+        name: "Prédio F08",
+        latitude: -29.791497,
+        longitude: -51.149546
+      },                                
+      {
+        name: "Prédio F09",
+        latitude: -29.791403,
+        longitude: -51.149139
+      },   
+      {
+        name: "Prédio F10",
+        latitude: -29.793146895517655,
+        longitude: -51.15020970504745
+      }           
     ]
   },
+  {
+    name: "Setor G",
+    local: [
+      {
+        name: "Estacionamento G1",
+        latitude: -29.795926639001376,
+        longitude: -51.149422856741005
+      },
+      {
+        name: "Prédio G01 - Centro Empresarial Padre Rick",
+        latitude: -29.79463014455553,
+        longitude: -51.14939871686857
+      },
+      {
+        name: "Prédio G02",
+        latitude: -29.79527257477544,
+        longitude: -51.14919218676983
+      },
+      {
+        name: "Prédio G03",
+        latitude: -29.794990930150547,
+        longitude: -51.14883813517199
+      },
+      {
+        name: "Prédio G04",
+        latitude: -29.795035155392032,
+        longitude: -51.14848944799231
+      },
+      {
+        name: "Prédio G05",
+        latitude: -29.79482799488161,
+        longitude: -51.14808175221298
+      },
+      {
+        name: "Prédio G06",
+        latitude: -29.794951363892924,
+        longitude: -51.147449566880574
+      },
+      {
+        name: "Prédio G07",
+        latitude: -29.79493591021403,
+        longitude: -51.14727828550485
+      },                              
+      {
+        name: "Prédio G08",
+        latitude: -29.79471607913644,
+        longitude: -51.145959976007454
+      },
+      {
+        name: "Prédio G09",
+        latitude: -29.794799167701374,
+        longitude: -51.146334355071374
+      },   
+      {
+        name: "Prédio G10",
+        latitude: -29.796565125715546,
+        longitude: -51.14750379181099
+      },   
+      {
+        name: "Prédio G11",
+        latitude: -29.794663638707053,
+        longitude: -51.14508949856828
+      },    
+      {
+        name: "Prédio G12 - UNITEC",
+        latitude: -29.795807212459696,
+        longitude: -51.14852312864535
+      },        
+      {
+        name: "Prédio G13",
+        latitude: -29.7956819456802,
+        longitude: -51.1477562722468
+      },   
+      {
+        name: "Prédio G14",
+        latitude: -29.796480518712674,
+        longitude: -51.14856823784526
+      },  
+      {
+        name: "Prédio G15",
+        latitude: -29.79734391716763,
+        longitude: -51.14861826613065
+      }                                 
+    ]
+  },   
   {
     name: "Setor H",
     local: [
@@ -278,7 +508,7 @@ export const setoresUnisinos = [
         longitude: -51.15312560055706
       }
     ]
-  },
+  },  
   {
     name: "Setor I",
     local: [
@@ -286,6 +516,46 @@ export const setoresUnisinos = [
         name: "Área de futura expansão",
         latitude: -29.798999858530117,
         longitude: -51.155586784023605
+      }
+    ]
+  },  
+  {
+    name: "Setor J",
+    local: [
+      {
+        name: "Prédio J01",
+        latitude: -29.797778573001466,
+        longitude: -51.15815947604417
+      }
+    ]
+  },
+  {
+    name: "Setor K",
+    local: [
+      {
+        name: "Prédio K01",
+        latitude: -29.797469584303816,
+        longitude: -51.15884868291968
+      }
+    ]
+  },
+  {
+    name: "Setor L",
+    local: [
+      {
+        name: "L01 - HT Micron",
+        latitude: -29.793761853725957,
+        longitude: -51.15914144745486
+      }
+    ]
+  },  
+  {
+    name: "Setor M",
+    local: [
+      {
+        name: "Engloba estacionamento externo",
+        latitude: -29.791468,
+        longitude: -51.153352
       }
     ]
   }
