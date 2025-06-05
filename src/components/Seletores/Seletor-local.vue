@@ -4,12 +4,12 @@ import { setoresUnisinos } from './Setores';
 
 // Props e emits para funcionar com v-model e receber setor selecionado
 const props = defineProps<{
-  setor: string;
-  modelValue: string;
+  setor: string | null;
+  modelValue: string | null;
 }>();
 
 const emit = defineEmits<{
-  (e: 'update:modelValue', value: string): void;
+  (e: 'update:modelValue', value: string | null): void;
 }>();
 
 const localSelecionado = ref(props.modelValue);

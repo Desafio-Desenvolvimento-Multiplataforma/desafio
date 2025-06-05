@@ -2,7 +2,7 @@
 import { ref, defineProps, defineEmits, watch } from 'vue';
 import { setoresUnisinos } from './Setores';
 
-const props = defineProps<{ modelValue: string }>();
+const props = defineProps<{ modelValue: string | null }>();
 const emit = defineEmits(['update:modelValue']);
 
 //Extrai apenas os nomes dos setores para usar no select
@@ -15,14 +15,6 @@ watch(setorLocal, (novoValor) => {
 </script>
 
 <template>
-  <v-select
-    v-model="setorLocal"
-    clearable
-    chips
-    label="Setor"
-    :items="setores"
-    hide-details
-    density="comfortable"
-    variant="outlined"
-  />
+  <v-select v-model="setorLocal" clearable chips label="Setor" :items="setores" hide-details density="comfortable"
+    variant="outlined" />
 </template>

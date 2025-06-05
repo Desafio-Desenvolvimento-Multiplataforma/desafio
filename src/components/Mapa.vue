@@ -4,7 +4,7 @@ import L from 'leaflet';
 
 //def a propriedade recebida - um objeto de coordenadas (latitude, longitude) ou null
 const props = defineProps<{
-  coordenadas: { latitude: number, longitude: number } | null;
+  coordenadas: { latitude: number, longitude: number, nome: string } | null;
 }>();
 
 //latitude e longitude da localização atual do usuário

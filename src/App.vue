@@ -14,7 +14,7 @@ const setorSelecionado = ref(null);
 const localSelecionado = ref(null);
 
 //armazenar as coordenadas (latitude e longitude) do local selecionado
-const localCoordenadas = ref<{ latitude: number, longitude: number } | null>(null);
+const localCoordenadas = ref<{ latitude: number, longitude: number, nome: string } | null>(null);
 
 //atualiza coordenadas quando setor e local são definidos
 function atualizarCoordenadas() {
