@@ -28,12 +28,12 @@ onMounted(() => {
   // Pegando a localização do usuário através do navigator.geolocation (API nativa do navegador)
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
-      // lat.value = position.coords.latitude;
-      // lgn.value = position.coords.longitude;
+      lat.value = position.coords.latitude;
+      lgn.value = position.coords.longitude;
 
       //Simulando localização dentro da Unisinos
-      lat.value = -29.794782;
-      lgn.value = -51.151863;
+      // lat.value = -29.794782;
+      // lgn.value = -51.151863;
 
       //ícone personalizado para representar o usuário
       const myIcon = L.icon({
